@@ -47,6 +47,14 @@ language
 				["email"] = <"c.antoniadis@sigmasoft.gr">
 			>
 		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			author = <
+				["name"] = <"Shinji KOBAYASHI">
+				["organisation"] = <"NPO openEHR Japan">
+				["email"] = <"skoba@moss.gr.jp">
+			>
+		>
 		["fr"] = <
 			language = <[ISO_639-1::fr]>
 			author = <
@@ -295,6 +303,48 @@ Not to be used for recording failed therapy.
 Not to be used for the explicit recording of an absence (or negative presence) of a reaction to 'any substances' or to identified substances, for example ‘No known allergies or adverse reactions’ or ‘No known allergies to Penicillin’. Use the EVALUATION.exclusion_global or EVALUATION.exclusion_specific archetypes to express a positive statement of adverse reaction exclusion.
 
 Not to be used for the explicit recording that no information was able to be obtained about the adverse reaction status of a patient. Use the EVALUATION.absence archetype to record that a positive statement that information was not able to be obtained, for example, if a non-cooperative patient refuses to answer questions.(en)">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"特定の物質または特定の分類に属する物質への曝露や再曝露によって、個人が有害反応を起こす素因について、臨床的評価を記録するため。">
+			keywords = <"反応","アレルギー","アレルギー性","有害","イベント","作用","感受性","不耐症","過敏症","副作用","毒性","薬剤","食物","作用物質","物質","免疫","非免疫","化学物質","アナフィラキシー","アレルゲン","薬剤","サプリメント","医薬品","自然療法","免疫学的","非免疫学的","リスク">
+			copyright = <"© Australian Digital Health Agency, openEHR Foundation, HL7 International, Nasjonal IKT">
+			use = <"特定の物質または特定の分類に属する物質への今後の曝露によって、有害反応を起こす素因について、臨床的評価を記録するために用いる。対象となる物質には、医薬品製剤の成分や賦形剤、生物学的製剤、金属塩、有機化合物などがあるが、これらに限らない。 
+
+本archetypeは、ごく軽微なものから生命を脅かすものまで、以下のあらゆる反応を起こす素因を健康記録の一か所に記録できるように設計されている。
+- 免疫介在性：I〜IV型の反応（アレルギー反応や過敏症を含む）を記録する。 
+- 非免疫介在性：偽アレルギー反応、副作用、不耐症、薬剤毒性などを記録する。
+臨床現場では、免疫介在性と非免疫介在性の反応を区別することが難しい場合がある。反応の種類を特定しても、患者への影響の深刻さや危害のリスクを判断する代わりにはならない。
+
+素因が特定された場合は、「反応イベントの要約」SLOTの CLUSTER.adverse_reaction_event archetypeを用いて、1つ以上の反応イベントに関する情報や根拠を記録できる。
+
+CLUSTER.adverse_reaction_event archetypeに記録された症状の重症度は、有害反応リスクの「重症度」を判断する参考になる。例：ある物質への初回曝露でアナフィラキシーが起きた場合は、2回目以降の曝露でも再び起きるリスクが高いため、「重症度」を「高」とする根拠になる。
+
+本archetypeは、特定の物質（アモキシシリン、カキ、ハチ刺傷による毒など）、または物質の分類（例：ペニシリン系）に関する情報を記録できるように設計されている。物質の分類を記録した場合は、CLUSTER.adverse_reaction_event archetypeを用いて、反応ごとに具体的な物質を特定して記録できる。
+
+以下の目的で、有害反応のリスクがあることを記録するために用いる。
+- 個人への直接的な診療・ケアを支援する。 
+- 継続的に管理する有害反応リストやアレルギー・不耐症リストの一部として記録する。 
+- 有害反応に関する素因やイベントの情報交換を支援する。 
+- 有害反応の報告に役立てる。 
+- 臨床意思決定支援やアラートなど、コンピュータ上で知識に基づいて行う活動を支援する。
+
+有害反応イベントや症状が生じるリスクを記録する際は、原因と考えられる物質または物質の分類を必ず示す必要がある。特定の物質が原因かどうかに不確実性がある場合は、「検証状態」データエレメントでその程度を記録できる。反応や症状の原因として複数の物質が考えられる場合は、本archetypeの別々のインスタンスを用いて、物質ごとに記録する。その際、「検証状態」の初期値を「未確認」にすることで、臨床システムによる有害反応のチェックを有効にできる。その物質が原因ではないと後に判明した場合（例：アレルギー検査後）は、「検証状態」を「否定」に変更できる。">
+			misuse = <"熱、寒冷、日光、振動、運動などの物理的因子や、感染性因子、食品中の汚染物質による生理的反応の記録には、本archetypeではなく EVALUATION.problem/diagnosis または CLUSTER.symptom/sign の適切なarchetypeを用いる。
+
+診療プロセス、介入、製品の不具合を含む有害事象の記録には、本archetypeではなく、その目的に適したarchetypeを用いる。例：作用物質や物質の不適切な使用、投与量の誤り、誤投与、表示の誤り、介入や処置による危害や外傷、過量投与・中毒など。 
+
+原因となる物質が不明な有害反応の記録には、本archetypeではなく EVALUATION.problem_diagnosis または CLUSTER.symptom_sign を用いる。原因の可能性がある物質が特定されるまでは、これらを用いて健康記録に記録する。
+
+血液製剤の輸血に対する反応の記録には、本archetypeではなく、その目的に適したarchetypeを用いる。 
+
+「アラート」の記録には、本archetypeではなく EVALUATION.precaution、EVALUATION.contraindication、または関連するarchetypeを用いる。
+
+治療が奏効しなかったことの記録には、本archetypeを用いない。
+
+「あらゆる物質」または特定の物質に対する反応がないことを明示的に記録する場合には、本archetypeではなく EVALUATION.exclusion_global または EVALUATION.exclusion_specific archetypeを用いる。例：「既知のアレルギーや有害反応なし」「既知のペニシリンアレルギーなし」。これらのarchetypeを用いて、有害反応を除外する旨を明示する。
+
+患者の有害反応の状態について情報を取得できなかったことの明示的な記録には、本archetypeではなく EVALUATION.absence archetypeを用いる。例：非協力的な患者が質問への回答を拒否した場合など、情報を取得できなかった旨を明示する。">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -1919,6 +1969,146 @@ Il est admis que la plupart des cliniciens ne seront PAS en mesure de distinguer
 					text = <"Apparition de la première réaction">
 					description = <"Apparition de la première manifestation connue d’un événement indésirable.">
 					comment = <"Par exemple : la date et/ou l’heure exacte de l’apparition ; l’intervalle de temps au cours duquel l’apparition s’est produite ; l’âge de la personne au moment de l’apparition ; ou la durée écoulée depuis l’apparition. Une date partielle est valable, en utilisant le type de données DV_DATE_TIME, pour enregistrer seulement l’année.">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"有害反応リスク">
+					description = <"物質への曝露や再曝露によって、個人が有害または望ましくない生理的反応を起こす素因についての臨床的評価。">
+					comment = <"対象となる物質には、個人に適した用量で正しく投与された治療用物質、食物、動植物由来の物質、昆虫の刺傷による毒などがあるが、これらに限らない。">
+					source = <"openEHR,FHIR">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"物質">
+					description = <"個人に有害反応イベントが生じるリスクをもたらすと考えられる物質、または物質の分類を示す。">
+					comment = <"「物質」には、個別の物質と物質の分類のどちらも記録できる。医薬品のように、複数の単純な物質からなるものもある。可能であれば、意思決定支援を起動できる用語集により「物質」をコード化することを強く推奨する。例：SNOMED CT、DM+D、RxNorm、NDFRT、ATC、New Zealand Universal List of Medicines、Australian Medicines Terminology。自由記述は、適切な用語集を利用できない場合にのみ用いる。">
+				>
+				["at0006"] = <
+					text = <"コメント">
+					description = <"他の項目には収まらない有害反応の素因についての追加の記述。">
+					comment = <"例：「重症度」を「高リスク」とした理由や、今後の物質への曝露や投与に関する指示。集中治療室での投与や、副腎皮質ステロイドの予防的投与下での投与など。">
+				>
+				["at0042"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0047"] = <
+					text = <"裏付けとなる臨床記録情報">
+					description = <"アレルギー検査報告書など、健康記録の別の箇所にある臨床像や所見に関する追加情報へのリンク。">
+					comment = <"例：受診時の症状、診察所見、診断など。">
+				>
+				["at0058"] = <
+					text = <"反応の機序">
+					description = <"有害反応の基盤となる生理的な機序を示す。">
+					comment = <"免疫介在性の反応は、従来、今後の重大なリスクが高まることを示す指標とされてきた。しかし、現在の知見では、以前は免疫介在性と考えられていた反応の一部は実際には非免疫介在性であり、それでも生命を脅かすリスクがあるとされている。 
+
+免疫学的検査は、機序や原因物質を裏付ける根拠となることがある。ただし、感受性について感度または特異度が100%の検査はない。 
+
+多くの医療従事者は、個々の反応の機序を区別できないと考えられる。それでも、多くの既存システムでこの属性を記録してきたため、本データエレメントを設けている。">
+				>
+				["at0059"] = <
+					text = <"免疫介在性">
+					description = <"アレルギー反応や過敏症を含む、免疫介在性の反応。">
+				>
+				["at0060"] = <
+					text = <"非免疫介在性">
+					description = <"偽アレルギー反応、副作用、不耐症、薬剤毒性（例：ゲンタマイシンによるもの）などを含む、非免疫介在性の反応。">
+				>
+				["at0062"] = <
+					text = <"最終更新日">
+					description = <"素因または反応イベントの情報が更新された日。">
+				>
+				["at0063"] = <
+					text = <"検証状態">
+					description = <"特定された「物質」に対して反応を起こす素因、または今後反応を起こす可能性について、その確度を示す記述。">
+					comment = <"意思決定支援では、通常、「未確認」と「確認済み」に対してアラートを出し、「否定」の反応は対象外とする。臨床システムでは、状態が「否定」の有害反応の記録を有害反応リストに表示しないこともできる。ただし、「否定」の情報は、有害反応リストの照合・調整やシステム間の情報交換に役立つ場合がある。実装によっては、この項目を必須にすることもできる。自由記述のデータ型も選択できるため、テンプレートではこのデータエレメントに別の値セットを設定し、施設などによる違いに対応できる。その場合は、用語集により値をコード化することを推奨する。">
+				>
+				["at0064"] = <
+					text = <"未確認">
+					description = <"特定された「物質」に対して反応を起こす素因が、客観的に検証されていない。">
+				>
+				["at0065"] = <
+					text = <"確認済み">
+					description = <"特定された「物質」に対して反応を起こす素因が、客観的に検証されている。検査、再負荷、観察による臨床的根拠などに基づく。">
+				>
+				["at0066"] = <
+					text = <"否定">
+					description = <"特定された「物質」に対して反応を起こす素因があるという判断について、それを無効とするのに十分な臨床的確度で異議が示されたか、反証されている。検査、再負荷、観察による臨床的根拠などに基づく。">
+				>
+				["at0101"] = <
+					text = <"重症度">
+					description = <"重篤な臓器系の障害や生命を脅かす結果が生じる可能性を示す。">
+					comment = <"「最悪の事態」を予測した判断とみなすことができる。多くの場合、「低」を既定値とする。">
+				>
+				["at0102"] = <
+					text = <"低">
+					description = <"物質への曝露によって、重篤な臓器系の障害や生命を脅かす結果が生じる可能性は低い。通常の臨床状況では、特定された「物質」への今後の曝露は相対的禁忌とみなすべきである。">
+				>
+				["at0103"] = <
+					text = <"高">
+					description = <"物質への曝露によって、重篤な臓器系の障害や生命を脅かす結果が生じる可能性がある。通常の臨床状況では、特定された「物質」への今後の曝露は絶対的禁忌とみなすべきである。">
+				>
+				["at0117"] = <
+					text = <"反応が起きた直近の日時">
+					description = <"把握されている中で反応イベントが最後に発症した日付や時刻。">
+					comment = <"例：実際の発症日時、発症したと考えられる期間、発症時の年齢、発症からの経過時間。DV_DATE_TIME データ型を用いて、年のみを記録する部分的な日付も許容される。">
+				>
+				["at0120"] = <
+					text = <"区分">
+					description = <"特定された「物質」の区分。">
+					comment = <"一部の臨床システムで現在この情報を記録しているため、本データエレメントを設けている。コード体系を使用している場合、この情報は「物質」から導出できるため、実質的には冗長となる。">
+				>
+				["at0121"] = <
+					text = <"食物">
+					description = <"ピーナッツや卵など、身体に栄養を供給するために摂取するあらゆる物質。">
+				>
+				["at0122"] = <
+					text = <"薬剤">
+					description = <"生理的な作用を得るために投与するあらゆる物質。">
+				>
+				["at0123"] = <
+					text = <"その他">
+					description = <"毒、ラテックス、その他の環境中の物質など、接触するその他のあらゆる物質。">
+				>
+				["at0124"] = <
+					text = <"判定不能">
+					description = <"利用可能な情報では評価できない。">
+				>
+				["at0126"] = <
+					text = <"判定不能">
+					description = <"生理的な機序を判定できなかった。">
+				>
+				["at0128"] = <
+					text = <"Extension">
+					description = <"ローカルコンテンツを捕捉するため、あるいは他の参照モデルや形式手法と整合させるために必要な追加情報。">
+					comment = <"例：ローカルな情報要件や、FHIRの相当するものに適合させるための追加メタデータなど。">
+				>
+				["at0129"] = <
+					text = <"反応イベントの要約">
+					description = <"特定された「物質」への曝露に関連する、各有害反応イベントの詳細情報の要約。">
+				>
+				["at0130"] = <
+					text = <"アクティブ・インアクティブの状態">
+					description = <"有害反応リスクに関する記述がアクティブかインアクティブかを示す状態。">
+				>
+				["at0131"] = <
+					text = <"アクティブ">
+					description = <"ケア対象者は、特定された物質に対する反応を現在起こしているか、起こすリスクがある。">
+				>
+				["at0132"] = <
+					text = <"インアクティブ">
+					description = <"ケア対象者は、特定された物質に対する反応を起こすリスクがなくなっている。">
+				>
+				["at0133"] = <
+					text = <"反応が最初に起きた日時">
+					description = <"把握されている中で反応イベントが最初に起きた日時。">
+					comment = <"例：実際の発症日時、発症したと考えられる期間、発症時の年齢、発症からの経過時間。DV_DATE_TIME データ型を用いて、年のみを記録する部分的な日付も許容される。">
 				>
 			>
 		>
