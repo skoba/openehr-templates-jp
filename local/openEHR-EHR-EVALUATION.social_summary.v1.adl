@@ -14,6 +14,14 @@ language
 				["organisation"] = <"Helse Bergen og Nasjonal IKT">
 			>
 		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			author = <
+				["name"] = <"Shinji KOBAYASHI">
+				["organisation"] = <"NPO openEHR Japan">
+				["email"] = <"skoba@moss.gr.jp">
+			>
+		>
 		["it"] = <
 			language = <[ISO_639-1::it]>
 			author = <
@@ -47,6 +55,20 @@ Bruk som en kontainer arketype for å gi en felles gjenfinnbar ENTRY-arketype so
 
 Bruken av uttrykket \"Sosialanamnese\" har stor variasjon. Arketypen er utviklet for å tillate representasjon av ulike konsepter som utrykker sosialanamnese i ulike kliniske sammenhenger ved hjelp av en blanding av gjenbrukbare CLUSTER-arketyper.">
 			misuse = <"Brukes ikke for å registrere informasjon relatert til livsstil. For eksempel: Bruk spesifikke arketyper for bruk av alkohol, tobakk og andre substanser, kosthold og ernæring, og fysisk aktivitet.">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"個人の健康に影響を及ぼす可能性のある生活状況や社会的経験を、文章で要約して記録するため。それらのさまざまな側面を詳しく記述する CLUSTER archetype群を入れ子にするための枠組みを提供する。">
+			keywords = <"社会","家族","教育","職業","就労","環境","住居","経済状況","生活歴","生活歴要約","生活">
+			copyright = <"© National E-Health Transition Authority, openEHR Foundation, Nasjonal IKT HF">
+			use = <"個人の健康に影響を及ぼす可能性のある生活状況や社会的経験を、文章で要約して記録するために用いる。
+
+既存の臨床システムに記録されている生活状況や社会的経験の叙述的な記述を、archetype化された形式に組み込むために用いる。
+
+コンテナarchetypeとして用い、個別の詳細情報を記録する CLUSTER archetype群を入れ子にできる、検索可能な共通の ENTRY archetypeを提供する。組み込む CLUSTER archetypeの例には、他者との関係、社会的支援、居住状況、就労、教育、宗教などがあるが、これらに限らない。
+
+「生活歴要約」という語の使われ方は、実際には大きく異なる。本archetypeは、再利用可能なarchetypeを適切に組み合わせることで、さまざまな臨床の文脈における生活歴の概念を表現できるよう設計されている。">
+			misuse = <"生活習慣に関する情報の記録には、本archetypeではなく、それぞれの情報に対応するarchetypeを用いる。例：飲酒、喫煙やその他の物質使用、食事と栄養、身体活動に対応するarchetypeを用いる。">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -223,6 +245,40 @@ ontology
 				["at0006"] = <
 					text = <"Ultima modifica">
 					description = <"La data in cui questo riassunto sociale è stato aggiornato per l'ultima volta.">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"生活歴要約">
+					description = <"個人の健康に影響を及ぼす可能性のある生活状況や社会的経験に関する要約情報。">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"要約">
+					description = <"個人の健康に影響を及ぼす可能性のある生活状況や社会的経験の叙述的な記述。">
+					comment = <"生活状況や社会的経験の全体像、または生活歴要約の主要な側面を文章で要約して記録し、構造化データを追加して補うために用いることができる。また、既存または旧来の臨床システムからテキストデータを取り込むためにも使用できる。「詳細情報」スロットに CLUSTER archetypeを組み込むことで、個々の所見に関する詳細情報を構造化して記録できる。">
+				>
+				["at0003"] = <
+					text = <"詳細情報">
+					description = <"生活状況や社会的経験に関する構造化された詳細情報。">
+				>
+				["at0004"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"Extension">
+					description = <"ローカルコンテンツを捕捉するため、あるいは他の参照モデルや形式手法と整合させるために必要な追加情報。">
+					comment = <"例：ローカルな情報要件や、FHIR または CIMI の相当するものに適合させるための追加メタデータ。">
+				>
+				["at0006"] = <
+					text = <"最終更新日">
+					description = <"この生活歴要約が最後に更新された日付。">
 				>
 			>
 		>
