@@ -94,14 +94,6 @@ language
 				["organisation"] = <"Norwegian Centre for Integrated Care and Telemedicine, Tromsø, Norway">
 			>
 		>
-		["ja"] = <
-			language = <[ISO_639-1::ja]>
-			author = <
-				["name"] = <"Shinji KOBAYASHI">
-				["organisation"] = <"NPO openEHR Japan">
-				["email"] = <"skoba@moss.gr.jp">
-			>
-		>
 		["sl"] = <
 			language = <[ISO_639-1::sl]>
 			author = <
@@ -218,13 +210,6 @@ description
 			purpose = <"Brukes som en generisk seksjonsoverskrift som skal gis nytt navn i en templat for å passe i en gitt klinisk kontekst.">
 			use = <"Brukes til å lage en seksjonsoverskrift i en templat, hvis navn deretter endres for å passe i den aktuelle kliniske konteksten. For eksempel: \"Templat-overskrift\" endret til \"Funn ved undersøkelse\", \"Anamnese\", \"Personopplysninger\" eller \"Oppsummering\".">
 			misuse = <"Skal ikke stå med uendret navn i en templat.">
-		>
-		["ja"] = <
-			language = <[ISO_639-1::ja]>
-			purpose = <"テンプレート内で特定の臨床的文脈に合わせて名前を変更して使う、汎用のセクション見出しを提供するため。">
-			copyright = <"© openEHR Foundation">
-			use = <"テンプレート内で、特定の臨床的文脈に合わせて名前を変更するセクション見出しを構成するために用いる。例：「仮見出し」を「診察所見」に変更する。">
-			misuse = <"テンプレート内で名前を変更せずにそのまま残してはならない。">
 		>
 		["sl"] = <
 			language = <[ISO_639-1::sl]>
@@ -380,14 +365,6 @@ ontology
 				["at0000"] = <
 					text = <"Geçici başlık">
 					description = <"Belirli bir klinik bağlama uyacak şekilde bir şablonda yeniden adlandırılması gereken genel bir bölüm başlığı.">
-				>
-			>
-		>
-		["ja"] = <
-			items = <
-				["at0000"] = <
-					text = <"仮見出し">
-					description = <"テンプレート内で特定の臨床的文脈に合わせて名前を変更すべき、汎用のセクション見出し。">
 				>
 			>
 		>
