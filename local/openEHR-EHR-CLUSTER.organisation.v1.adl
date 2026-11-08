@@ -31,6 +31,14 @@ language
 				["email"] = <"liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no, john.tore.valand@helse-vest-ikt.no, varntzen@ous-hf.no, kanika.kuwelker@helse-vest-ikt.no">
 			>
 		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			author = <
+				["name"] = <"Shinji KOBAYASHI">
+				["organisation"] = <"NPO openEHR Japan">
+				["email"] = <"skoba@moss.gr.jp">
+			>
+		>
 		["fr"] = <
 			language = <[ISO_639-1::fr]>
 			author = <
@@ -103,6 +111,22 @@ Denne arketypen kan også brukes som en midlertidig erstatning for formelle demo
 			misuse = <"Brukes ikke til å representere, erstatte eller vedlikeholde formelle demografiske opplysninger. Bruk et formelt pasientregister, helsepersonellregister eller arketyper basert på openEHR demografisk informasjonsmodell til dette formålet.
 
 Brukes ikke for å representere behandlingssted eller lignende dataelementer, som skal representeres formelt i pasientjournalen. Bruk attributter fra Referansemodellen for dette formålet.">
+		>
+		["ja"] = <
+			language = <[ISO_639-1::ja]>
+			purpose = <"臨床記録の作成に際して取得した、組織に関する詳細情報を記録するため。">
+			keywords = <"組織","医療提供者","介護者","ネットワーク","集団">
+			copyright = <"© openEHR Foundation">
+			use = <"臨床記録の作成に際して取得した、組織に関する詳細情報を記録するために用いる。正式な登録簿や公式の一覧によらずに知り得た情報をその場で記録する場合や、正式な登録簿や一覧の利用が適切でない、または利用できない場合を主に想定している。以下のような使用例がある。
+- EVALUATION.advance_care_directive archetypeの「写し保有者」SLOTを用いて、事前ケア記録の写しを保有する組織の情報を記録する。
+- 個人に在宅ケアを提供する組織の名称と連絡先を記録する。
+
+本archetypeは、登録された事業者や病院、病院の正式な「傘下組織」など、正式に認められた組織の詳細情報を記録するために設計されている。傘下組織には、運営上独立した分院や専門分野に特化した分院、在宅ケアサービスなどがある。また、地域の支援団体など、より非公式なネットワークや集団の連絡先情報を記録するためにも使用できる。
+
+本archetypeは、対象領域の専門家とテンプレートをレビューする際に、正式なデモグラフィックデータの代用として使用することもできる。例えば、評価票の冒頭に組織の詳細情報が表示されることをレビュー担当者が想定している場合に、その情報を示すために用いる。">
+			misuse = <"公式の登録簿や一覧の表現、代替、または維持・管理に用いてはならない。これらの目的には、正式な「医療従事者名簿（Health Provider Index）」、またはopenEHRデモグラフィック情報モデルに基づくarchetypeを用いること。
+
+ケアの実施場所など、参照モデルの属性を用いて健康記録に正式に記録すべき情報を、本archetypeで記録してはならない。">
 		>
 		["en"] = <
 			language = <[ISO_639-1::en]>
@@ -436,6 +460,54 @@ ontology
 				["at0022"] = <
 					text = <"Communication électronique">
 					description = <"Informations relatives à un ou plusieurs types de communication électronique utilisés par l'établissement.">
+				>
+			>
+		>
+		["ja"] = <
+			items = <
+				["at0000"] = <
+					text = <"組織">
+					description = <"1人以上で構成され、特定の目的を持つ組織。">
+					comment = <"例：企業、機関、協会、ネットワーク、診療部門、地域団体、診療グループ、支払機関・保険者、ケアチーム、またはケアや支援を提供する近隣住民の集まり。">
+				>
+				["at0001"] = <
+					text = <"名称">
+					description = <"組織の名称またはラベル（非構造情報）。">
+					comment = <"例：「Royal Children's Hospital」、「ABC District Nursing Service」、「YNWA Oslo」、または「JB Smith Lawyers」。">
+				>
+				["at0002"] = <
+					text = <"連絡担当者">
+					description = <"組織内の1人以上の人に関する詳細情報。">
+				>
+				["at0003"] = <
+					text = <"識別子">
+					description = <"組織に関連付けられた識別子。">
+					comment = <"このデータエレメントの出現回数は 0..* に設定されており、複数の識別子を記録できる。ID データ型には、ID の値、種類、発行者、割り当て先を記録する複数の下位要素がある点に注意。">
+				>
+				["at0004"] = <
+					text = <"役割">
+					description = <"個人またはケア対象者に対する組織の関係または役割。">
+					comment = <"例：腫瘍専門医、緩和ケアの訪問看護サービス、または非公式な支援ネットワーク。">
+				>
+				["at0005"] = <
+					text = <"住所">
+					description = <"組織の詳細な住所。">
+				>
+				["at0017"] = <
+					text = <"追加の詳細情報">
+					description = <"組織に関する追加の詳細情報。">
+				>
+				["at0019"] = <
+					text = <"コメント">
+					description = <"他の項目には収まらない組織についての追加の記述。">
+				>
+				["at0021"] = <
+					text = <"親組織">
+					description = <"この組織を傘下組織または子会社として含む、より大きな組織。">
+				>
+				["at0022"] = <
+					text = <"電子的な連絡先">
+					description = <"組織の電子的な連絡先（1種類以上）の詳細情報。">
 				>
 			>
 		>
