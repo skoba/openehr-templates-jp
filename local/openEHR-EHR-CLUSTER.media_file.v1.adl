@@ -39,14 +39,6 @@ language
 				["email"] = <"liv.laugen@ous-hf.no, john.tore.valand@helse-bergen.no">
 			>
 		>
-		["ja"] = <
-			language = <[ISO_639-1::ja]>
-			author = <
-				["name"] = <"Shinji KOBAYASHI">
-				["organisation"] = <"NPO openEHR Japan">
-				["email"] = <"skoba@moss.gr.jp">
-			>
-		>
 		["sk"] = <
 			language = <[ISO_639-1::sk]>
 			author = <
@@ -191,33 +183,6 @@ Hvis en serie mediafiler er representert som et enkelt element, for eksempel en 
 			misuse = <"Skal ikke brukes til å representere informasjon, instruksjons- eller utdanningsmateriale levert til en person, eller dens omsorgsperson, for eksempel brosjyrer for pasientopplæring. Bruk CLUSTER.information_resource til dette formålet.
 
 Skal ikke brukes til å registrere en referanse til en kunnskapsbase - bruk CLUSTER. Knowledge_base_reference for dette formålet.">
-		>
-		["ja"] = <
-			language = <[ISO_639-1::ja]>
-			purpose = <"医療プロセスの一環として取得または使用するメディアファイルと、関連するメタデータの詳細情報を記録するため。">
-			keywords = <"画像","音声","テキスト","動画","アプリケーション","ファイル","マルチメディア","音声","DICOM","デジタル","文書","写真","録音","メディアファイル">
-			copyright = <"© openEHR Foundation">
-			use = <"医療プロセスの一環として取得または使用するメディアファイルと、関連するメタデータの詳細情報を記録するために用いる。
-
-本archetypeは、メディアファイルと、その取得に関するメタデータのみを保持することを意図している。本archetypeは他のarchetype（通常は OBSERVATION または ACTION）の中に入れ子にして用い、メディアファイルの取得に関する背景や状況はその親archetypeに記録する。例：放射線画像の撮影法、撮影方向、観察方向の詳細情報や DICOM の詳細情報は、OBSERVATION.imaging_exam_result archetypeに記録する。 
-
-以下のような使用例があるが、これらに限らない。
-- 外傷の写真を記録する。
-- 特定の臨床所見の位置を示す図を記録する。
-- 放射線画像を記録する。
-- 面談の録音や録画を記録する。
-- 病理標本スライドのスキャン画像を記録する。
-- 心電計などの医療機器から出力されたデータを記録する。
-- 紙の文書や手書きの診療記録のスキャン画像を記録する。
-
-「コンテンツ」データエレメントでは、Multimedia データ型を用いてメディアファイルを健康記録に取り込み、保存できる。Multimedia データ型には、ファイルサイズや外部の参照先を示す URI など、多くの参照モデルの属性がある。https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class を参照。
-
-創傷の「前」と「後」の画像など、複数のメディアファイルを取得した場合は、各ファイルを本archetypeの別々のインスタンスで表す。
-
-CT画像のように一連のメディアファイルを一つの項目として表す場合は、本archetypeの一つのインスタンスを用いて、そのファイル群への URI パスを記録できる。">
-			misuse = <"患者教育用のリーフレットなど、個人やその介護者に提供する情報資料、指導資料、教育資料の記録には、本archetypeではなく CLUSTER.information_resource を用いる。
-
-知識ベースへの参照の記録には、本archetypeではなく CLUSTER.knowledge_base_reference を用いる。">
 		>
 		["sk"] = <
 			language = <[ISO_639-1::sk]>
@@ -764,53 +729,6 @@ Hvis filen lagres et sted utenfor den elektroniske journalen, kan adressen til f
 				["at0013"] = <
 					text = <"Détails supplémentaires">
 					description = <"Détails supplémentaires concernant le fichier multimédia.">
-				>
-			>
-		>
-		["ja"] = <
-			items = <
-				["at0000"] = <
-					text = <"メディアファイル">
-					description = <"医療プロセスの一環として取得または使用するメディアファイルと、関連するメタデータ。">
-				>
-				["at0001"] = <
-					text = <"コンテンツ">
-					description = <"メディアファイルのデジタル表現。">
-					comment = <"ファイルをローカルに保存する場合は、Multimedia データ型を用いてコンテンツの実体を取り込み、保存する。例：文書には RTF または PDF、画像には JPG、動画には MP4、音声ファイルには WAV を用いる。利用可能なメディア種別の一覧は https://specifications.openehr.org/releases/TERM/latest/SupportTerminology.html#_media_types を参照。  ファイルを健康記録の外部に保存する場合は、Multimedia データ型の URI 属性を用いて、ファイルへの詳細なパスを記録する。Multimedia データ型には、ファイルサイズや外部の参照先を示す URI など、多くの参照モデルの属性がある。https://specifications.openehr.org/releases/RM/latest/data_types.html#_dv_multimedia_class を参照。">
-				>
-				["at0002"] = <
-					text = <"コンテンツ名">
-					description = <"メディアファイルの内容を表す名称またはタイトル。">
-					comment = <"メディアファイルの内容を説明する。合意された標準的な命名規則があれば、それを用いること。例：「右手の熱傷 #1」または「5月2日の循環器科のビデオ診察」。">
-				>
-				["at0004"] = <
-					text = <"作成日時">
-					description = <"メディアファイルを生成または作成した日時、部分的な日付、または期間。">
-				>
-				["at0005"] = <
-					text = <"説明">
-					description = <"メディアファイルに関する記述。">
-				>
-				["at0007"] = <
-					text = <"コメント">
-					description = <"他の項目には収まらないメディアファイルについての追加の記述。">
-				>
-				["at0010"] = <
-					text = <"識別子">
-					description = <"メディアファイルの一意の識別子。">
-				>
-				["at0011"] = <
-					text = <"作成機器">
-					description = <"メディアファイルの生成または作成に用いた機器に関する詳細情報。">
-					comment = <"例：画像の撮影に用いたカメラ。">
-				>
-				["at0012"] = <
-					text = <"作成者">
-					description = <"メディアファイルを生成または作成した個人や組織に関する詳細情報。">
-				>
-				["at0013"] = <
-					text = <"追加の詳細情報">
-					description = <"メディアファイルに関する構造化された追加の詳細情報。">
 				>
 			>
 		>
