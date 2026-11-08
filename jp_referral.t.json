@@ -21,7 +21,7 @@
       "custodian_namespace" : "",
       "sem_ver" : "0.2.0",
       "build_uid" : "",
-      "MD5-CAM-1.0.1" : "dd515c14130f3dd316e9c499fdb28d64",
+      "MD5-CAM-1.0.1" : "c644179977f51c124af355d4ec6c1af1",
       "PARENT:MD5-CAM-1.0.1" : "1AE1CE5FEEA2C7BF49E562CF8F9521EA"
     },
     "details" : {
@@ -2510,8 +2510,8 @@
                       "upper" : 90.0,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "upperUnbounded" : false,
-                      "lowerUnbounded" : false
+                      "lowerUnbounded" : false,
+                      "upperUnbounded" : false
                     } ]
                   }, {
                     "@type" : "C_INTEGER",
@@ -2521,8 +2521,8 @@
                       "upper" : 6,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "upperUnbounded" : false,
-                      "lowerUnbounded" : false
+                      "lowerUnbounded" : false,
+                      "upperUnbounded" : false
                     } ]
                   } ]
                 } ]
@@ -2582,8 +2582,8 @@
                       "upper" : 180.0,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "upperUnbounded" : false,
-                      "lowerUnbounded" : false
+                      "lowerUnbounded" : false,
+                      "upperUnbounded" : false
                     } ]
                   }, {
                     "@type" : "C_INTEGER",
@@ -2593,8 +2593,8 @@
                       "upper" : 6,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "upperUnbounded" : false,
-                      "lowerUnbounded" : false
+                      "lowerUnbounded" : false,
+                      "upperUnbounded" : false
                     } ]
                   } ]
                 } ]
@@ -2652,8 +2652,8 @@
                     "constraint" : [ {
                       "lowerIncluded" : false,
                       "upperIncluded" : false,
-                      "upperUnbounded" : true,
-                      "lowerUnbounded" : true
+                      "lowerUnbounded" : true,
+                      "upperUnbounded" : true
                     } ]
                   }, {
                     "@type" : "C_INTEGER",
@@ -2663,8 +2663,8 @@
                       "upper" : 2,
                       "lowerIncluded" : true,
                       "upperIncluded" : true,
-                      "upperUnbounded" : false,
-                      "lowerUnbounded" : false
+                      "lowerUnbounded" : false,
+                      "upperUnbounded" : false
                     } ]
                   } ]
                 } ]
@@ -4267,16 +4267,7 @@
               "@type" : "C_COMPLEX_OBJECT",
               "rmTypeName" : "ELEMENT",
               "nodeId" : "at0077.1",
-              "attributes" : [ {
-                "@type" : "C_ATTRIBUTE",
-                "rmAttributeName" : "value",
-                "children" : [ {
-                  "@type" : "C_COMPLEX_OBJECT",
-                  "rmTypeName" : "DV_DATE_TIME",
-                  "attributes" : [ ],
-                  "attributeTuples" : [ ]
-                } ]
-              } ],
+              "attributes" : [ ],
               "attributeTuples" : [ ]
             }, {
               "@type" : "C_COMPLEX_OBJECT",
