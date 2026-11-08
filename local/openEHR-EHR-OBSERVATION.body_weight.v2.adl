@@ -626,12 +626,12 @@ ontology
 					description = <"個人の体重を測定したもの">
 				>
 				["at0001"] = <
-					text = <"*Simple(en)">
-					description = <"*@ internal @(en)">
+					text = <"Simple">
+					description = <"@ internal @">
 				>
 				["at0002"] = <
-					text = <"*history(en)">
-					description = <"*@ internal @(en)">
+					text = <"history">
+					description = <"@ internal @">
 				>
 				["at0003"] = <
 					text = <"任意のイベント">
@@ -642,8 +642,8 @@ ontology
 					description = <"個人の重量">
 				>
 				["at0008"] = <
-					text = <"*state structure(en)">
-					description = <"*@ internal @(en)">
+					text = <"state structure">
+					description = <"@ internal @">
 				>
 				["at0009"] = <
 					text = <"着衣状態">
@@ -662,8 +662,8 @@ ontology
 					description = <"何も着衣していない">
 				>
 				["at0015"] = <
-					text = <"*protocol structure(en)">
-					description = <"*@ internal @(en)">
+					text = <"protocol structure">
+					description = <"@ internal @">
 				>
 				["at0017"] = <
 					text = <"おむつを付けている状態">
